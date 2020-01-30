@@ -1,0 +1,41 @@
+Crear un servidor en NodeJS
+1. Instalar NodeJS
+2. Crear una carpeta para el proyecto
+3. Ejecutar el comando npm init dentro de la carpeta
+4. Instalar el modulo express con el comando 
+    npm install --save express
+ (npm: Node Package Manager)
+5. Crear un archivo llamado index.js y codificar el servidor.
+6. Ejecutar el servidor utilizando
+    node index.js
+
+JSON (Javascript Object Notation):
+
+CSV:
+    Juan,Perez,25,Masculino,12/12/2012
+
+XML:
+    <persona>
+        <nombre>Juan</nombre>
+        <apellido>Perez</apellido>
+        <edad>25</edad>
+        <genero>Masculino</genero>
+        <fecha>
+            <dia>12</dia>
+            <mes>12</mes>
+            <anio>2012</anio>
+        </fecha>
+    </persona>
+
+JSON
+persona={
+    nombre:"Juan",
+    apellido:"Perez",
+    edad:"25",
+    genero:"Masculino",
+    fecha:{
+        dia:12,
+        mes:12,
+        anio:2012
+    }
+}
