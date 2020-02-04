@@ -39,3 +39,25 @@ persona={
         anio:2012
     }
 }
+
+
+CSS (Cascading Style Sheets)
+Formas de aplicar CSS:
+    En linea: Se aplica utilizando la PROPIEDAD style sobre la etiqueta.
+    Los estilos se definen utilizando la siguiente sintaxis:
+        nombre-estilo1:valor-estilo1;nombre-estilo2:valor-estilo2;...;nombre-estiloN:valor-estiloN;
+    En el encabezado: Se aplica los estilos dentro de la ETIQUETA style, comunmente situada dentro de la etiqueta head
+        Para aplicar los estilos se utilizan identificadores denominados SELECTORES
+        Los selectores pueden ser:
+            -Por etiqueta: A todas las etiquetas de dicho tipo se les aplicarian los estilos indicados
+            -Por ID: Se aplican los estilos a la etiqueta con dicho ID. Para hacer referencia a un id se utiliza el prefijo # (numeral)
+            -Por clase CSS
+        
+        La sintaxis para aplicar los estilos utilizando selectores es:
+            selector{
+                nombre-estilo1:valor-estilo1;
+                nombre-estilo2:valor-estilo2;
+                ...
+                nombre-estiloN:valor-estiloN;
+            }
+    Archivo externo:

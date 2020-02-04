@@ -5,8 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Netflix</title>
+    <style>
+        /* Comentarios CSS */
+        
+        body{
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position:center center;
+            /* background-attachment: fixed; */
+            height: 100vh;
+            margin:0;
+
+        }
+        p{
+            background-color:rgba(0, 0, 0, 0.7);
+            color:white;
+        }
+        #logo{
+            margin:20px 0 0 35px;
+        }
+    </style>
 </head>
-<body>
-    <img src="img/logo-netflix.png" alt="">
+<body style="background-color:#000000;background-image:url(img/fondo.jpg)">
+    <div style="background-color:rgba(0, 0, 0, 0.7);height: 100%;">
+        <img id="logo" src="img/logo-netflix.png" alt="">
+        <section>
+            <h1>Sign In</h1>
+            <input type="email" placeholder="Email or phone number">
+            <input type="password" placeholder="Password">
+            <button>Sign In</button>
+            <label><input type="checkbox">Remember Me</label>
+        </section>
+        <!-- ul>li*5 -->
+        <!-- table>(thead>tr>th*5)+(tbody>tr>td*5) -->
+    </div>
 </body>
 </html>
+
+<!-- 
+rgb (red,green,blue) => (0-255,0-255,0-255)
+(255,0,0) Rojo
+(0,0,255) Azul
+(0,255,0) Verde
+(0,0,0) Negro
+(255,255,255) Blanco
+(234,4,4) En su mayoria rojo
+
+Hexadecimal
+#FF0000
+#0000FF
+#00FF00
+#000000
+#FFFFFF
+
+
+ -->
