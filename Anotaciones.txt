@@ -60,4 +60,24 @@ Formas de aplicar CSS:
                 ...
                 nombre-estiloN:valor-estiloN;
             }
-    Archivo externo:
+    Archivo externo: Se incluyen utilizando la etiqueta 
+        <link rel="stylesheet" href="RUTA">
+
+Prioridades CSS
+
+1. Estilos en linea
+2. Estilos por ID
+3. Estilos por clase CSS
+4. Estilos por nombre de etiqueta
+
+Se puede forzar la prioridad con important.
+
+
+Media Query (Consulta a medios): Consulta a las caracteristicas del medio para condicionar los estilos y adaptar el contenido dependiendo del tamaño de la pantalla. A esto se le conoce como sitios web responsivos o adaptables a difentes tamaños (Responsive Websites).
+
+@media
+
+
+Bootstrap
+Angular
+un poquito de SASS y SCSS

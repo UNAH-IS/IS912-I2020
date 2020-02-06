@@ -1,0 +1,30 @@
+.texto-negrita, #login input[type="button"]{
+    font-weight: bold;
+    /*  */
+}
+
+#login input[type="button"]{
+    background-color:#E50914;
+    width: 100%;
+    border:0;
+    border-radius: 5px;
+    text-align: center;
+    padding:15px;
+    font-size:1.1rem;
+    color:white;
+    margin: 10px 0 10px 0;
+    cursor:pointer;
+    transition: background-color .3s ease-in-out;
+}
+#login input[type="button"]:hover{
+    background-color:rgb(148, 3, 10);
+}
+
+#login input[type="button"]:disabled{
+    background-color:rgb(105, 86, 86);
+    cursor:not-allowed;
+}
+
+p{
+    color:aqua;
+}

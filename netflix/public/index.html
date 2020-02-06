@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Netflix</title>
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    
     <style>
+        @font-face {
+            font-family: FuenteColocha;
+            src: url('fonts/Serenity Script.otf');
+        }
         /* Comentarios CSS */
         
         body{
@@ -15,7 +21,7 @@
             /* background-attachment: fixed; */
             height: 100vh;
             margin:0;
-
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
         p{
             background-color:rgba(0, 0, 0, 0.7);
@@ -24,17 +30,74 @@
         #logo{
             margin:20px 0 0 35px;
         }
+        #login{
+            background-color: rgba(0, 0, 0, 0.65);
+            width: 350px;
+            height: 700px;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            padding: 40px 50px 30px 50px;
+            transition: all .3s ease-in-out;
+        }
+        #login:hover{
+            background-color:rgba(47, 8, 8, 0.76);
+        }
+        h1{
+            font-size:32px;
+            /* font-family: FuenteColocha; */
+            /* font-family: 'Righteous', cursive; */
+        }
+
+        .control-formulario{
+            background-color:#343434;
+            font-size: 1rem;
+            width: 100%;
+            border-radius: 5px;
+            border:0;
+            padding:15px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #parrafo-azul{
+            background-color: blue;
+        }
+
+        .parrafo-verde{
+            background-color: green;
+        }
+
+        p{
+            background-color:yellow;
+            color:purple;
+        }
+
+        p{
+            color:yellow;
+        }
+
+        p{
+            color:coral;
+        }
+        
     </style>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body style="background-color:#000000;background-image:url(img/fondo.jpg)">
-    <div style="background-color:rgba(0, 0, 0, 0.7);height: 100%;">
+    <div style="background-color:rgba(0, 0, 0, 0.55);height: 100%;">
         <img id="logo" src="img/logo-netflix.png" alt="">
-        <section>
+        <section id="login">
             <h1>Sign In</h1>
-            <input type="email" placeholder="Email or phone number">
-            <input type="password" placeholder="Password">
-            <button>Sign In</button>
+            <input class="control-formulario texto-negrita" type="email" placeholder="Email or phone number">
+            <input class="control-formulario" type="password" placeholder="Password">
+            <input type="button" value="Sign In">
             <label><input type="checkbox">Remember Me</label>
+            <p id="parrafo-azul" class="parrafo-verde" style="background-color:red;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea libero quasi, in dicta ratione ducimus odio distinctio rerum explicabo inventore iure expedita sunt beatae quam numquam optio. Repudiandae eius repellendus beatae blanditiis cupiditate assumenda eaque sit molestiae commodi ducimus, deserunt minus consectetur nam optio ad eveniet amet sapiente, eligendi illum, error cumque. Iusto exercitationem provident nisi, delectus aut eius. Laboriosam, minima harum enim obcaecati placeat eveniet laborum doloremque, beatae in sapiente magnam commodi distinctio possimus ex aut itaque, fugiat hic consequuntur. Distinctio quos harum quia, aliquid possimus nobis corporis blanditiis aperiam necessitatibus animi in architecto vitae, eos tenetur fuga repudiandae?</p>
+        </section>
+        <section>
+            <input type="button" value="Otro boton que me gustaria que no tuviera estilos">
         </section>
         <!-- ul>li*5 -->
         <!-- table>(thead>tr>th*5)+(tbody>tr>td*5) -->
