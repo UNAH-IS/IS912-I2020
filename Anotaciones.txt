@@ -81,3 +81,22 @@ Media Query (Consulta a medios): Consulta a las caracteristicas del medio para c
 Bootstrap
 Angular
 un poquito de SASS y SCSS
+
+
+Angular: Frontend framework
+
+Componentes: Sidebar, Menu, Formulario, Galeria
+
+
+Un componente en angular tiene tres archivos principales:
+.html
+.css
+.ts  (Typescript=>Microsoft)
+
+Por defecto en angular se crea el componente app
+
+nombre.component.extension
+app.component.html
+app.component.css
+app.component.ts
+
