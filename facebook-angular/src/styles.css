@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  padding-top: 3.5rem;
+}
+.bg-dark{
+  background-color:#3B5898!important;
+}
+.jumbotron{
+  height: 100vh;
+}

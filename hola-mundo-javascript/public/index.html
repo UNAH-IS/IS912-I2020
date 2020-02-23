@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <script>
+        let nombre = 'Juan';
+        var apellido = 'Perez';
+        const CONSTANTE = 'x';
+        /*
+        Tipos de datos
+            enteros
+            flotantes
+            cadenas
+            boleanos
+            arreglos
+            objetos
+        */
+
+        //document.write('Hola ' + nombre + ' ' + apellido);
+        document.write('<ul>');
+        for (let i=0; i<10;i++ )
+            document.write(`<li>Hola ${nombre} ${apellido}</li>`);
+        document.write('</ul>');
+        console.log('Hola mundo');
+        console.error('Hola mundo, esto no es un error, solo parece que fuera. Pero no lo es');
+        //alert('Hola mundo, este es un cuadro de dialogo');
+    </script>
+</body>
+</html>
