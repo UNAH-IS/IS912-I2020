@@ -80,6 +80,40 @@
             {nombre:'Laura',apellido:'Perez'}
         ];
 
+        let sumar = function(a,b){
+            return a+b;
+        }
+
+        console.log(sumar(4,5));
+
+        console.log(sumar);
+
+        let restar = (a,b)=>a-b;
+        let mostrarMensaje2 = mensaje=>console.log(mensaje);
+
+        console.log(restar(5,5));
+        mostrarMensaje2('Hola mundo');
+
+        //Autoejecucion
+        (function(){
+            console.log('Hola mundo, esto esta confuso');
+        })();
+
+        (()=>console.log('Hola mundo, esto esta confuso'))();
+
+        function ejecutarFuncion(f){
+            f();
+        }
+        
+        function mostrarHolaMundo(){
+            console.log('HOLA MUNDO');
+        }
+
+        ejecutarFuncion(mostrarHolaMundo);
+        //ejecutarFuncion(sumar(3,4));
+        ejecutarFuncion(function(){
+            console.log('Se ejecuto una funcion anonima enviada como parametro');
+        });
         
     </script>
 </body>
