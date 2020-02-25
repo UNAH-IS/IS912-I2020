@@ -28,6 +28,59 @@
         console.log('Hola mundo');
         console.error('Hola mundo, esto no es un error, solo parece que fuera. Pero no lo es');
         //alert('Hola mundo, este es un cuadro de dialogo');
+
+        let arreglo = ['valor1','valor2','valor3',23,34.55,[12,12],true, {}];
+        
+        //JavaScriptObjectNotation
+
+        let persona = {
+            nombre:'Juan',
+            apellido:'Perez',
+            edad:35,
+            genero:'Masculino',
+            fechaNacimiento:{
+                dia:22,
+                mes:12,
+                anio:2012
+            }
+        }
+
+        persona.pais = 'Honduras';
+
+        //>EcmaScript6
+        class Persona{
+            constructor(nombre, apellido, edad, genero, fechaNacimiento){
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.edad = edad;
+                this.genero = genero;
+                this.fechaNacimiento = fechaNacimiento;
+            }
+
+            mostrarNombreCompleto(){
+                console.log(this.nombre + ' ' + this.apellido);
+            }
+        }
+
+        let p = new Persona('Pedro','Martinez',35,'Masculino',{dia:22,mes:12,anio:2010});
+
+        console.log(persona);
+        console.log(p);
+        document.write(JSON.stringify(persona));
+        document.write(persona.nombre);
+
+        function mostrarMensaje(mensaje){
+            console.log(mensaje);
+        }
+
+
+        let personas = [
+            {nombre:'Juan',apellido:'Martinez'},
+            {nombre:'Maria',apellido:'Rodriguez'},
+            {nombre:'Laura',apellido:'Perez'}
+        ];
+
+        
     </script>
 </body>
 </html>
