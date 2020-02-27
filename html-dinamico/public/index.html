@@ -4,14 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
+    <style>
+        .parrafo-activo{
+            background-color: red;
+            color:white;
+        }
+        .parrafo-inactivo{
+            background-color:black;
+            color:rgb(211, 211, 211);
+        }
+        .input-error{
+            border:1px solid red;
+        }
+
+        .input-success{
+            border:1px solid rgb(31, 233, 31);
+        }
+
+        input:focus{
+            outline-width: 0;
+        }
+    </style>
 </head>
 <body>
-    <input id="usuario" value="Juan" type="text" placeholder="Usuario">
+    <input id="usuario" type="text" placeholder="Usuario">
     <input id="password" type="password" placeholder="Password">
-    <button type="button">Login</button>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repellat fuga sapiente enim voluptatibus, distinctio recusandae praesentium ad esse molestiae modi pariatur possimus deleniti, veniam voluptas tempora magnam magni animi accusantium minus a! At, placeat? Fuga eius quas possimus illo, adipisci suscipit, laboriosam fugit explicabo debitis, sequi repellendus illum omnis.</p>
-    <p>Dolore vitae ratione laudantium non tempore error ad quas vero ducimus rem, asperiores quidem. Dicta, animi quas. Corporis reiciendis, sapiente voluptates totam quod enim labore reprehenderit nam architecto! Quis quas architecto maiores recusandae? Officia, omnis suscipit facere nihil cum recusandae corrupti alias eos, commodi maxime molestias animi, consectetur sapiente ad?</p>
-    <p>Nostrum labore dolore facilis quaerat dolores qui expedita veniam eaque illum ullam quisquam corporis est enim repellendus ipsum non, veritatis incidunt voluptatibus. Laboriosam ipsa officiis molestias voluptatibus recusandae perspiciatis minima illo odio expedita obcaecati rerum necessitatibus veniam enim, sunt et veritatis. Blanditiis, explicabo ab. Accusamus sint amet atque hic ab!</p>
+    <button disabled id="btn-login" type="button" onclick="login()">Login</button>
+    <br>
+    <input type="text" placeholder="Email" onkeyup="validarCorreo(this)">
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repellat fuga sapiente enim voluptatibus, distinctio recusandae praesentium ad esse molestiae modi pariatur possimus deleniti, veniam voluptas tempora magnam magni animi accusantium minus a! At, placeat? Fuga eius quas possimus illo, adipisci suscipit, laboriosam fugit explicabo debitis, sequi repellendus illum omnis.</p>
+    <button type="button" onclick="cambiarContenido()">Cambiar contenido</button>
+    <p id="p2">Dolore vitae ratione laudantium non tempore error ad quas vero ducimus rem, asperiores quidem. Dicta, animi quas. Corporis reiciendis, sapiente voluptates totam quod enim labore reprehenderit nam architecto! Quis quas architecto maiores recusandae? Officia, omnis suscipit facere nihil cum recusandae corrupti alias eos, commodi maxime molestias animi, consectetur sapiente ad?</p>
+    <button type="button" onclick="cambiarEstilos()">Cambiar estilos</button>
+    <p id="p3" class="parrafo-inactivo" onmouseover="activarParrafo(this)" onmouseout="inactivarParrafo(this)">Nostrum labore dolore facilis quaerat dolores qui expedita veniam eaque illum ullam quisquam corporis est enim repellendus ipsum non, veritatis incidunt voluptatibus. Laboriosam ipsa officiis molestias voluptatibus recusandae perspiciatis minima illo odio expedita obcaecati rerum necessitatibus veniam enim, sunt et veritatis. Blanditiis, explicabo ab. Accusamus sint amet atque hic ab!</p>
 
     <script src="js/controlador.js"></script>
 </body>
