@@ -100,3 +100,11 @@ app.component.html
 app.component.css
 app.component.ts
 
+
+
+Informacion persistente del lado del cliente:
+cookies
+LocalStorage
+SessionStorage
+WebSQL (SQLite) -> Deprecado
+IndexedDB (BD NoSQL)

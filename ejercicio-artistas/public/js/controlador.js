@@ -1,107 +1,116 @@
-var artistas = [
-    {
-        nombreArtista:'Metallica',
-        caratulaArtista: 'img/metallica-logo.png',
-        albumes:[
-            {
-                tituloAlbum:'Album 1',
-                anio:2222,
-                genero:'Rock',
-                caratula:'img/cover1.jpg',
-                canciones:[
-                    {
-                        nombreCancion:'Perreo intenso',
-                        duracion:'3:33'
-                    },
-                    {
-                        nombreCancion:'El Tra',
-                        duracion:'3:33'
-                    }
-                ]
-            },
-            {
-                tituloAlbum:'Album 2',
-                anio:2222,
-                genero:'Queso',
-                caratula:'img/cover2.jpg',
-                canciones:[
-                    {
-                        nombreCancion:'Perreo intenso Remix 1',
-                        duracion:'3:33'
-                    }
-                ]
-            },
-            {
-                tituloAlbum:'Album 3',
-                anio:2222,
-                genero:'Rock',
-                caratula:'img/cover3.jpg',
-                canciones:[
-                    {
-                        nombreCancion:'Perreo intenso, versión cumbión ',
-                        duracion:'3:33'
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        nombreArtista:'Epica',
-        caratulaArtista: 'img/epica-logo.jpg',
-        albumes:[
-            {
-                tituloAlbum:'Album 1',
-                anio:2222,
-                genero:'Rock',
-                caratula:'img/cover1.jpg',
-                canciones:[
-                    {
-                        nombreCancion:'Tusa',
-                        duracion:'3:33'
-                    }
-                ]
-            },
-            {
-                tituloAlbum:'Album 2',
-                anio:2222,
-                genero:'Queso',
-                caratula:'img/cover2.jpg',
-                canciones:[
-                    {
-                        nombreCancion:'Otra rola',
-                        duracion:'3:33'
-                    }
-                ]
-            },
-            {
-                tituloAlbum:'Album 3',
-                anio:2222,
-                genero:'Rock',
-                caratula:'img/cover3.jpg',
-                canciones:[
-                    {
-                        nombreCancion:'Perreo intenso',
-                        duracion:'3:33'
-                    }
-                ]
-            }
-        ]
-    }
-];
+var artistas =[];
+var localStorage = window.localStorage;
+if (localStorage.getItem('artistas')==null){
+    artistas = [
+        {
+            nombreArtista:'Metallica',
+            caratulaArtista: 'img/metallica-logo.png',
+            albumes:[
+                {
+                    tituloAlbum:'Album 1',
+                    anio:2222,
+                    genero:'Rock',
+                    caratula:'img/cover1.jpg',
+                    canciones:[
+                        {
+                            nombreCancion:'Perreo intenso',
+                            duracion:'3:33'
+                        },
+                        {
+                            nombreCancion:'El Tra',
+                            duracion:'3:33'
+                        }
+                    ]
+                },
+                {
+                    tituloAlbum:'Album 2',
+                    anio:2222,
+                    genero:'Queso',
+                    caratula:'img/cover2.jpg',
+                    canciones:[
+                        {
+                            nombreCancion:'Perreo intenso Remix 1',
+                            duracion:'3:33'
+                        }
+                    ]
+                },
+                {
+                    tituloAlbum:'Album 3',
+                    anio:2222,
+                    genero:'Rock',
+                    caratula:'img/cover3.jpg',
+                    canciones:[
+                        {
+                            nombreCancion:'Perreo intenso, versión cumbión ',
+                            duracion:'3:33'
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            nombreArtista:'Epica',
+            caratulaArtista: 'img/epica-logo.jpg',
+            albumes:[
+                {
+                    tituloAlbum:'Album 1',
+                    anio:2222,
+                    genero:'Rock',
+                    caratula:'img/cover1.jpg',
+                    canciones:[
+                        {
+                            nombreCancion:'Tusa',
+                            duracion:'3:33'
+                        }
+                    ]
+                },
+                {
+                    tituloAlbum:'Album 2',
+                    anio:2222,
+                    genero:'Queso',
+                    caratula:'img/cover2.jpg',
+                    canciones:[
+                        {
+                            nombreCancion:'Otra rola',
+                            duracion:'3:33'
+                        }
+                    ]
+                },
+                {
+                    tituloAlbum:'Album 3',
+                    anio:2222,
+                    genero:'Rock',
+                    caratula:'img/cover3.jpg',
+                    canciones:[
+                        {
+                            nombreCancion:'Perreo intenso',
+                            duracion:'3:33'
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+    localStorage.setItem('artistas',JSON.stringify(artistas));
+}
+else{
+    artistas = JSON.parse(localStorage.getItem('artistas'));
+}
 
-function generarTabla(){
-for(let i=0;i<artistas.length;i++)
-    document.querySelector('#tabla-artistas tbody').innerHTML +=
-                    `<tr>
-                        <td>${artistas[i].nombreArtista}</td>
-                        <td><img class="caratula" src="${artistas[i].caratulaArtista}"></td>
-                        <td>${artistas[i].albumes.length}</td>
-                        <td><button type="button" onclick="verDetalles(${i});">Ver detalles</button></td>
-                    </tr>`;
+function generarTablaArtistas(){
+    document.querySelector('#tabla-artistas tbody').innerHTML = '';
+    for(let i=0;i<artistas.length;i++)
+        document.querySelector('#tabla-artistas tbody').innerHTML +=
+                        `<tr>
+                            <td>${artistas[i].nombreArtista}</td>
+                            <td><img class="caratula" src="${artistas[i].caratulaArtista}"></td>
+                            <td>${artistas[i].albumes.length}</td>
+                            <td><button type="button" onclick="verDetalles(${i});">Ver detalles</button></td>
+                        </tr>`;
 
 }
 
-generarTabla();
+generarTablaArtistas();
 
 
 function  verDetalles(indice){
@@ -120,4 +129,21 @@ function  verDetalles(indice){
                 <td>${album.canciones.length}</td>
             </tr>`;
         }
+}
+
+function guardarArtista(){
+    let artista = {
+        nombreArtista:document.getElementById('nombre-artista').value,
+        caratulaArtista:document.getElementById('caratula-artista').value,
+        albumes:[]
+    }
+
+    console.log(artista);
+    artistas.push(artista);
+    localStorage.setItem('artistas',JSON.stringify(artistas));
+    generarTablaArtistas();
+}
+
+function limpiarLocalStorage(){
+    localStorage.clear();
 }
