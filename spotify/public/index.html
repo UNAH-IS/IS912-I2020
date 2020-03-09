@@ -33,6 +33,7 @@
             </h6>
           <ul class="nav flex-column" id="lista-artistas">
           </ul>
+          <button class="btn btn-outline-success btn-sm ml-4" data-toggle="modal" data-target="#modalNuevoArtista">Agregar Artista</button>
   
           <ul class="nav flex-column">
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -159,7 +160,7 @@
         </div>
 
         <!------------------------------->
-
+        <button class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#modalNuevoAlbum">Nuevo album</button>
         <div id="vista-artista" style="display:none;">
         <div><!--vista-artista-->
           
@@ -226,7 +227,54 @@
   </div>
 
 
+  <!-- Modal nuevo artista -->
+  <div class="modal fade" id="modalNuevoArtista" tabindex="-1" role="dialog" aria-labelledby="modalNuevoArtistaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNuevoArtistaLabel">Nuevo Artista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Nombre Artista
+          <input id="nombreArtista" class="form-control" type="text" placeholder="Nombre Artista">
+          Caratula
+          <input id="caratulaArtista" class="form-control" type="text" placeholder="Caratula">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success" onclick="guardarArtista()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+
+  <!-- Modal nuevo album -->
+  <div class="modal fade" id="modalNuevoAlbum" tabindex="-1" role="dialog" aria-labelledby="modalNuevoAlbumLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNuevoAlbumLabel">Nuevo Album</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Nombre Album
+          <input id="tituloAlbum" class="form-control" type="text" placeholder="Nombre Album">
+          Caratula Album
+          <input id="caratulaAlbum" class="form-control" type="text" placeholder="Caratula">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success" onclick="guardarAlbum()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

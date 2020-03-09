@@ -121,7 +121,41 @@ generarListaArtistas();
 function verArtista(indiceArtista){
     artistaSeleccionado = indiceArtista;
     console.log(artistas[indiceArtista]);
-    
+    document.getElementById('vista-artista').innerHTML = '';
+    for (let i = 0;  i<artistas[indiceArtista].albumes.length;i++){
+        const album = artistas[indiceArtista].albumes[i];
+        let canciones='';
+        for (let j=0;j<album.canciones.length;j++){
+            canciones += 
+                `<div class="row song-item">
+                    <div class="col-1"><i class="fas fa-play"></i></div>
+                    <div class="col-10">
+                        <div class="song-title">${album.canciones[j].nombreCancion}</div>
+                        <div class="song-description">${artistas[indiceArtista].nombreArtista} - ${album.tituloAlbum}</div>
+                    </div>
+                    <div class="col-1">
+                        <span>3:56</span>
+                        <button onclick="agregarCancion(1)" class="btn btn-outline-success btn-sm" title="Agregar a playlist"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>`;
+        }
+        document.getElementById('vista-artista').innerHTML += 
+            `<section class="container-fluid">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <div class="cover-image" style="background-image:url(${album.caratula});">
+                        </div><br>
+                        <h5 class="text-muted">${album.tituloAlbum}</h5>
+                        <button class="btn btn-success"type="button">Play</button>
+                    </div>
+                    <div class="col-8">
+                        ${canciones}                        
+                    </div>
+                </div>
+            </section>
+            <hr>`;
+    }
+
     $("#vista-artista").show();
     $("#vista-playlist").hide();
 }
@@ -131,33 +165,25 @@ function agregarCancion(codigoCancion){
     $("#modal-playlists").modal('show');
 }
 
+function guardarArtista(){
+    let artista = {
+        nombreArtista:document.getElementById('nombreArtista').value,
+        caratulaArtista:document.getElementById('caratulaArtista').value,
+        albumes:[]
+    }
 
+    artistas.push(artista);
+    localStorage.setItem('artistas',JSON.stringify(artistas));
+    generarListaArtistas();
+    $('#modalNuevoArtista').modal('hide');
 
+}
 
-let temp = `<section class="container-fluid">
-<div class="row">
-  <div class="col-4 text-center">
-    <div class="cover-image" style="background-image:url(img/cover1.jpg);">
-    </div><br>
-    <h5 class="text-muted">Album 1</h5>
-    <button class="btn btn-success"type="button">Play</button>
-  </div>
-  <div class="col-8">
+function guardarAlbum(){
+    let album = {
+        tituloAlbum:document.getElementById('tituloAlbum').value,
+        caratula:document.getElementById('caratulaAlbum').value,
+        canciones:[]
+    }
     
-    <!--Item 1 -->
-    <div class="row song-item">
-      <div class="col-1"><i class="fas fa-play"></i></div>
-      <div class="col-10">
-        <div class="song-title">Cancion</div>
-        <div class="song-description">Artista - Album</div>
-      </div>
-      <div class="col-1">
-          <span>3:56</span>
-          <button onclick="agregarCancion(1)" class="btn btn-outline-success btn-sm" title="Agregar a playlist"><i class="fas fa-plus"></i></button>
-      </div>
-    </div>
-    
-  </div>
-</div>
-</section>
-<hr>`;
+}
