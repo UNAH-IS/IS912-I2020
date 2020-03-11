@@ -7,6 +7,7 @@
 var artistas =[];
 var localStorage = window.localStorage;
 var artistaSeleccionado;
+var indiceAlbumSeleccionado;
 if (localStorage.getItem('artistas')==null){
     artistas = [
         {
@@ -146,10 +147,10 @@ function verArtista(indiceArtista){
                         <div class="cover-image" style="background-image:url(${album.caratula});">
                         </div><br>
                         <h5 class="text-muted">${album.tituloAlbum}</h5>
-                        <button class="btn btn-success"type="button">Play</button>
+                        <button class="btn btn-success btn-sm" type="button" onclick="nuevaCancion(${i})">Nueva canción</button>
                     </div>
                     <div class="col-8">
-                        ${canciones}                        
+                        ${canciones}                    
                     </div>
                 </div>
             </section>
@@ -183,7 +184,30 @@ function guardarAlbum(){
     let album = {
         tituloAlbum:document.getElementById('tituloAlbum').value,
         caratula:document.getElementById('caratulaAlbum').value,
+        genero:document.getElementById('generoAlbum').value,
+        anio:document.getElementById('anioAlbum').value,
         canciones:[]
     }
-    
+
+    artistas[artistaSeleccionado].albumes.push(album);
+    localStorage.setItem('artistas', JSON.stringify(artistas));
+    $('#modalNuevoAlbum').modal('hide');
+
+    verArtista(artistaSeleccionado);
+}
+
+function nuevaCancion(indiceAlbum){
+    indiceAlbumSeleccionado = indiceAlbum;
+    $("#modalNuevaCancion").modal('show');
+}
+
+function guardarCancion(){
+    let cancion = {
+        nombreCancion:document.getElementById('nombreCancion').value,
+        duracion:document.getElementById('duracion').value
+    }
+    artistas[artistaSeleccionado].albumes[indiceAlbumSeleccionado].canciones.push(cancion);
+    localStorage.setItem('artistas',JSON.stringify(artistas));
+    $("#modalNuevaCancion").modal('hide');
+    verArtista(artistaSeleccionado);
 }

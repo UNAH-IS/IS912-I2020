@@ -1,0 +1,17 @@
+Angular 
+
+Modulo principal de una aplicacion en angular:
+    app.module.ts: Se enlazan todos los componentes
+
+FormsModule: Es un modulo para interactuar con formularios, para incluirlo se hace en el archivo app.module.ts 
+import {FormsModule} from '@angular/forms';
+
+
+....
+
+imports:[
+    ...,
+    FormsModule
+]
+
+Es necesario importar FormsModule para utilizar la propiedad [(ngModel)] para hacer el enlace de un input con una variable de Typescript

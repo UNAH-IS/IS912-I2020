@@ -1,0 +1,8 @@
+Nombre: <input [(ngModel)]="persona.nombre" type="text" placeholder="Nombre"><br> <!--Binding-->
+Apellido: <input [(ngModel)]="persona.apellido" type="text" placeholder="Apellido"><br>
+Edad: <input [(ngModel)]="persona.edad" type="text" placeholder="Edad"><br>
+Password: <input [(ngModel)]="persona.password" type="text" placeholder="Password"><br>
+<button type="button" (click)="guardar()">Guardar</button>
+<br>Nombre ingresado: {{persona.nombre}} <!--Sintaxis de interpolacion-->
+
+

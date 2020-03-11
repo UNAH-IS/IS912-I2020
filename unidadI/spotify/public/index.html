@@ -267,6 +267,10 @@
           <input id="tituloAlbum" class="form-control" type="text" placeholder="Nombre Album">
           Caratula Album
           <input id="caratulaAlbum" class="form-control" type="text" placeholder="Caratula">
+          Genero
+          <input id="generoAlbum" class="form-control" type="text" placeholder="Genero">
+          Año
+          <input id="anioAlbum" class="form-control" type="text" placeholder="Año">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -275,6 +279,31 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal nueva cancion -->
+  <div class="modal fade" id="modalNuevaCancion" tabindex="-1" role="dialog" aria-labelledby="modalNuevaCancionLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNuevaCancionLabel">Nueva Cancion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Nombre Cancion
+          <input id="nombreCancion" class="form-control" type="text" placeholder="Nombre Canción">
+          Duración
+          <input id="duracion" class="form-control" type="text" placeholder="Duración">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success" onclick="guardarCancion()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
