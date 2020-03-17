@@ -1,0 +1,21 @@
+<h1>Artistas</h1>
+<input type="text" placeholder="Artista" [(ngModel)]="artista.nombreArtista"><br>
+<input type="text" placeholder="Caratula" [(ngModel)]="artista.caratula"><br>
+<button type="button" (click)="guardar()">Guardar</button>
+<hr>
+<h3 *ngIf="artistas.length==0">No hay información</h3>
+<table *ngIf="artistas.length!=0">
+  <thead>
+    <tr>
+      <th>Artista</th>
+      <th>Caratula</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of artistas">
+      <td>{{item.nombreArtista}}</td>
+      <td><img [src]="item.caratula"></td>
+    </tr>
+  </tbody>
+</table>
+
