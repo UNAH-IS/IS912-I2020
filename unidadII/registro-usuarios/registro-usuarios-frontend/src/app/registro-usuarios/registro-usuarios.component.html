@@ -1,0 +1,25 @@
+Nombre: <input [(ngModel)]="persona.nombre" type="text" placeholder="Nombre"><br> <!--Binding-->
+Apellido: <input [(ngModel)]="persona.apellido" type="text" placeholder="Apellido"><br>
+Fecha de nacimiento: <input [(ngModel)]="persona.fechaNacimiento" type="date" placeholder="Fecha de nacimiento"><br>
+Pais: <input [(ngModel)]="persona.pais" type="text" placeholder="Pais"><br>
+<button type="button" (click)="guardar()">Guardar</button>
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha de nacimiento</th>
+      <th>Pais</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas;let i = index;">
+      <td>{{persona.nombre}}</td>
+      <td>{{persona.apellido}}</td>
+      <td>{{persona.fechaNacimiento}}</td>
+      <td>{{persona.pais}}</td>
+      <td><button type="button" (click)="eliminar(i)">X</button></td>
+    </tr>
+  </tbody>
+</table>
