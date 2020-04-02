@@ -1,0 +1,12 @@
+<form [formGroup]="formularioRegistro">
+  Nombre: <input [ngClass]="{'input-error':nombre.invalid && (nombre.dirty || nombre.touched)}" formControlName="nombre" type="text" placeholder="Nombre" required><br>
+  <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="error">
+    <span *ngIf="nombre.errors.required">Error el campo es obligatorio</span>
+    <span *ngIf="nombre.errors.maxlength">Error el tamaño máximo es de 10 caracteres</span>
+  </div>
+  Apellido: <input  formControlName="apellido" type="text" placeholder="Apellido"><br>
+  Email: <input  formControlName="email" type="email" placeholder="Email"><br>
+  Fecha de nacimiento: <input formControlName="fechaNacimiento"type="date" placeholder="Fecha de nacimiento"><br>
+  Pais: <input formControlName="pais" type="text" placeholder="Pais"><br>
+  <button [disabled]="!formularioRegistro.valid" type="button" (click)="guardar()">Guardar</button>
+</form>
