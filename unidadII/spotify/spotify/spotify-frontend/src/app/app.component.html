@@ -1,0 +1,52 @@
+
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <app-sidebar (onVerArtista)="verArtista($event)" (onVerPlaylist)="verPlaylist($event)"></app-sidebar>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div id="vista-playlist" *ngIf="regionVisible == 'playlists'">
+        <!-- Playlists -->
+        <app-playlist></app-playlist>
+      </div>
+      <div id="vista-artista" *ngIf="regionVisible == 'artistas'">
+        <!-- Albumnes de los artistas -->
+        <app-album></app-album>
+      </div><!--vista-artista-->
+    </main>
+  </div>
+</div>
+
+
+  <!--Modal Playlists-->
+  <div class="modal fade" id="modal-playlists" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar a playlist</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Seleccione una playlist
+          <select class="form-control">
+            <option value="1">Playlist 1</option>
+            <option value="2">Playlist 2</option>
+            <option value="3">Playlist 3</option>
+            <option value="4">Playlist 4</option>
+            <option value="5">Playlist 5</option>
+            <option value="6">Playlist 6</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-success">Guardar en playlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- <router-outlet></router-outlet> -->

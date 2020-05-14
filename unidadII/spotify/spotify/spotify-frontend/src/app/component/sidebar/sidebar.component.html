@@ -1,0 +1,32 @@
+<nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span>Artists</span>
+        <a class="d-flex align-items-center text-muted" href="#">
+          <span data-feather="plus-circle"></span>
+        </a>
+      </h6>
+      <li class="nav-item" *ngFor="let artista of artistas">
+        <div class="nav-link" (click)="verArtista(artista)">
+          <fa-icon [icon]="faMusic"></fa-icon> {{artista.nombreArtista}}
+        </div>
+      </li>
+    </ul>
+
+    <ul class="nav flex-column">
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span>Playlists</span>
+        <a class="d-flex align-items-center text-muted" href="#">
+          <span data-feather="plus-circle"></span>
+        </a>
+      </h6>
+      <li class="nav-item"><div class="nav-link" (click)="verPlaylist(1)"><fa-icon [icon]="faPlay"></fa-icon> Playlist 1</div></li>
+      <li class="nav-item"><div class="nav-link" (click)="verPlaylist(2)"><fa-icon [icon]="faPlay"></fa-icon> Playlist 2</div></li>
+      <li class="nav-item"><div class="nav-link" (click)="verPlaylist(3)"><fa-icon [icon]="faPlay"></fa-icon> Playlist 3</div></li>
+      <li class="nav-item"><div class="nav-link" (click)="verPlaylist(4)"><fa-icon [icon]="faPlay"></fa-icon> Playlist 4</div></li>
+      <li class="nav-item"><div class="nav-link" (click)="verPlaylist(5)"><fa-icon [icon]="faPlay"></fa-icon> Playlist 5</div></li>
+      <li class="nav-item"><div class="nav-link" (click)="verPlaylist(6)"><fa-icon [icon]="faPlay"></fa-icon> Playlist 6</div></li>
+    </ul>
+  </div>
+</nav>

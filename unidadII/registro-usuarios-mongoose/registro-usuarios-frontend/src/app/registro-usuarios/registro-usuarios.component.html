@@ -1,0 +1,52 @@
+<form [formGroup]="formularioRegistro">
+  Nombre: <input [ngClass]="{'input-error':nombre.invalid && (nombre.dirty || nombre.touched)}" formControlName="nombre" type="text" placeholder="Nombre" required><br>
+  <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="error">
+    <span *ngIf="nombre.errors.required">Error el campo es obligatorio</span>
+    <span *ngIf="nombre.errors.maxlength">Error el tamaño máximo es de 10 caracteres</span>
+  </div>
+  Apellido: <input  formControlName="apellido" type="text" placeholder="Apellido"><br>
+  Email: <input  formControlName="email" type="email" placeholder="Email"><br>
+  <!-- Fecha de nacimiento: <input formControlName="fechaNacimiento" type="date" placeholder="Fecha de nacimiento"><br> -->
+  Día:
+  <select formControlName="dia">
+    <option *ngFor="let dia of dias">{{dia}}</option>
+  </select>
+  Mes:
+  <select formControlName="mes">
+    <option *ngFor="let mes of meses" [value]="mes.numeroMes">{{mes.nombreMes}}</option>
+  </select>
+  Año:
+  <select formControlName="anio">
+    <option *ngFor="let anio of [2020,2019,2018,2017]" [value]="anio">{{anio}}</option>
+  </select><br>
+  Pais: <select formControlName="pais">
+    <option *ngFor="let pais of paises" [value]="pais.nombrePais">{{pais.nombrePais}}</option>
+  </select><br>
+  <button *ngIf="!editando" [disabled]="!formularioRegistro.valid" type="button" (click)="guardar()">Guardar</button>
+  <button *ngIf="editando" type="button" (click)="actualizar()">Actualizar</button>
+  <button type="button" (click)="nuevo()">Nuevo</button>
+</form>
+
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha de nacimiento</th>
+      <th>Pais</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas;let i = index;">
+      <td>{{persona.nombre}}</td>
+      <td>{{persona.apellido}}</td>
+      <td>{{persona.fechaNacimiento.dia}}/{{persona.fechaNacimiento.mes}}/{{persona.fechaNacimiento.anio}}</td>
+      <td>{{persona.pais}}</td>
+      <td>
+        <button type="button" (click)="eliminar(persona._id)">X</button>
+        <button type="button" (click)="editar(persona._id)">Editar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

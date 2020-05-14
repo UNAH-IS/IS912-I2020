@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img src="../assets/images/spotify-white-logo.png" style="width: 180px;"></a>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#" (click)="abrirNuevaPlaylist(modalNuevaPlaylist)">Nueva playlist</a>
+      <a class="nav-link" href="#" (click)="abrirModalUsuarios(modalUsuarios)">Cambiar usuario</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Ventana modal de nueva playlist -->
+<ng-template #modalNuevaPlaylist let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Nueva Playlist</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cerro con la X')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input class="form-control" type="text" placeholder="Nombre del playlist">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success" (click)="guardarPlaylist()">Guardar</button>
+    <button type="button" class="btn btn-outline-success" (click)="modal.close('Boton Cerrar')">Cerrar</button>
+  </div>
+</ng-template>
+
+
+<!-- Seleccionar usuario -->
+<ng-template #modalUsuarios let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Seleccionar usuario</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cerro con la X')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <select class="form-control" [(ngModel)]="usuarioSeleccionado">
+      <option>Seleccione un usuario</option>
+      <option *ngFor="let usuario of usuarios" [ngValue]="usuario._id">{{usuario.nombreUsuario}}</option>
+    </select>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success" (click)="seleccionarUsuario()">Seleccionar usuario</button>
+    <button type="button" class="btn btn-outline-success" (click)="modal.close('Boton Cerrar')">Cerrar</button>
+  </div>
+</ng-template>

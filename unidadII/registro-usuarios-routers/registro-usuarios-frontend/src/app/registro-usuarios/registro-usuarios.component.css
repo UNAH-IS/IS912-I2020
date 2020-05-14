@@ -1,0 +1,10 @@
+.error{
+  margin:5px;
+  margin-top:0px;
+  font-size: .5rem;
+  color:red;
+}
+
+.input-error{
+  border-color:red;
+}
